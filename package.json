@@ -1,0 +1,16 @@
+{
+  "name": "algospark",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Мобильное учебное приложение: циклы for в Python, 12 уроков и 36 заданий.",
+  "type": "module",
+  "engines": { "node": ">=22.9.0" },
+  "scripts": {
+    "dev": "vite --configLoader runner",
+    "build": "vite build --configLoader runner",
+    "preview": "vite preview --configLoader runner",
+    "start:api": "node --env-file-if-exists=api/.env.local api/server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": { "vite": "6.1.0" }
+}

@@ -1,0 +1,91 @@
+/* The same matte-glass material as the FinPlus overview panels. */
+:root {
+  --as-frost-surface: rgba(255, 255, 255, .61);
+  --as-frost-edge: rgba(110, 130, 158, .19);
+  --as-frost-shadow: 0 12px 28px -20px rgba(30, 42, 59, .27), inset 0 1px 0 rgba(255, 255, 255, .35);
+  --as-frost-filter: blur(32px) saturate(130%);
+}
+
+body::before {
+  top: 36vh;
+  bottom: auto;
+  left: clamp(-180px, -6vw, 100px);
+  width: clamp(480px, 54vw, 820px);
+  background: linear-gradient(120deg, #ffbf75, #ff8a1b);
+  filter: blur(4px);
+  opacity: .68;
+  animation: none;
+}
+body::after {
+  filter: blur(4px);
+  opacity: .32;
+  animation: none;
+}
+
+/* An opacity animation with fill:both creates a backdrop root and hides
+   the coloured background from every glass card inside the screen. */
+.screen.active { animation: as-frost-arrive .28s ease-out; }
+@keyframes as-frost-arrive {
+  from { transform: translateY(6px); }
+  to { transform: none; }
+}
+
+.journey-hero,
+.section-selector-bar,
+.unit-card-banner,
+.lesson-block-card,
+.lesson-block-card.card-state-active,
+.lesson-block-card.card-state-passed,
+.lesson-block-card.card-state-locked,
+.course-section-divider,
+.theory-box-card,
+.unit-chest-card,
+.practice-mission,
+.section-option,
+.journey-guide-link {
+  background: var(--as-frost-surface);
+  background-image: none;
+  border-color: var(--as-frost-edge);
+  border-top-color: rgba(255, 255, 255, .78);
+  box-shadow: var(--as-frost-shadow);
+  backdrop-filter: var(--as-frost-filter);
+  -webkit-backdrop-filter: var(--as-frost-filter);
+}
+.journey-hero::before, .journey-hero::after { display: none; }
+.unit-card-banner { border-left-color: #ff7900; }
+.lesson-block-card.card-state-active { border-color: rgba(236, 122, 26, .35); border-top-color: rgba(255,255,255,.84); }
+.lesson-block-card.card-state-passed { border-color: rgba(65, 145, 112, .28); }
+.lesson-block-card:hover { box-shadow: 0 16px 32px -20px rgba(30,42,59,.35), inset 0 1px 0 rgba(255,255,255,.65); }
+.course-section-divider.is-current, .section-option.is-selected { border-color: rgba(236,122,26,.35); }
+.modal-card, .confirm-dialog-box {
+  background: rgba(255,255,255,.78);
+  border-color: rgba(255,255,255,.7);
+  box-shadow: 0 24px 64px -24px rgba(30,42,59,.24), inset 0 1px 0 rgba(255,255,255,.7);
+  backdrop-filter: var(--as-frost-filter);
+  -webkit-backdrop-filter: var(--as-frost-filter);
+}
+.welcome-steps li {
+  background: rgba(255,255,255,.45);
+  border-color: rgba(255,255,255,.7);
+  box-shadow: inset 0 1px rgba(255,255,255,.5);
+}
+.finish-reward-card {
+  background: var(--as-frost-surface) !important;
+  border: 1px solid var(--as-frost-edge) !important;
+  box-shadow: var(--as-frost-shadow);
+  backdrop-filter: var(--as-frost-filter);
+  -webkit-backdrop-filter: var(--as-frost-filter);
+}
+
+@media (max-width: 640px) {
+  body::before { top: 34vh; left: -66vw; width: 142vw; min-width: 440px; opacity: .6; }
+  body::after { top: 8vh; right: -60vw; opacity: .22; }
+}
+@media (prefers-reduced-motion: reduce) { .screen.active { animation: none; } }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root { --as-frost-surface: rgba(255,255,255,.92); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root { --as-frost-surface: #f8fafc; --as-frost-filter: none; }
+  .modal-card, .confirm-dialog-box { background: #f8fafc; }
+}

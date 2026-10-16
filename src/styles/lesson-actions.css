@@ -1,0 +1,27 @@
+/* Viewport-level action bar; no transform-based horizontal centring. */
+#eval-drawer {
+  position: fixed;
+  inset: auto 0 var(--as-keyboard-inset, 0px);
+  width: min(100%, 924px);
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 12px max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  z-index: 70;
+  transform: none;
+  animation: none;
+}
+#eval-main-btn { min-height: 52px; }
+#eval-drawer .feedback-row {
+  max-height: min(25dvh, 160px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  margin-bottom: 12px;
+}
+body.has-evaluation-drawer #screen-lesson {
+  padding-bottom: calc(var(--as-drawer-height, 84px) + 24px);
+}
+html { scroll-padding-bottom: calc(var(--as-drawer-height, 0px) + 24px); }
+body.has-evaluation-drawer .ai-fab {
+  bottom: calc(var(--as-drawer-height, 84px) + var(--as-keyboard-inset, 0px) + 16px);
+}

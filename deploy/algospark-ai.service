@@ -1,0 +1,30 @@
+[Unit]
+Description=AlgoSpark DeepSeek Tutor API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=algospark
+Group=algospark
+WorkingDirectory=/var/www/algospark-api
+EnvironmentFile=/etc/algospark/algospark.env
+ExecStart=/usr/bin/node /var/www/algospark-api/server.mjs
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+MemoryMax=192M
+CPUQuota=20%
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

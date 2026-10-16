@@ -1,0 +1,19 @@
+/* Dialogs sit above the viewport action bar, including on Android. */
+.modal-overlay {
+  z-index: 100;
+  inset: 0 0 var(--as-keyboard-inset, 0px);
+}
+.confirm-dialog-overlay { z-index: 110; }
+body.has-app-modal #eval-drawer,
+body.has-app-modal .ai-fab { visibility: hidden; pointer-events: none; }
+#modal-ai .modal-card {
+  height: min(620px, calc(var(--as-visible-height, 100dvh) - 24px)) !important;
+  max-height: calc(var(--as-visible-height, 100dvh) - 24px);
+  min-height: 0;
+  overflow: hidden;
+}
+#modal-ai .modal-card > :first-child,
+#modal-ai .ai-privacy-note,
+#modal-ai .modal-card > :last-child { flex-shrink: 0; }
+#ai-chat-box { flex: 1 1 auto; min-height: 0; overflow-y: auto; }
+#modal-ai .modal-card > :last-child { padding-top: 8px; }

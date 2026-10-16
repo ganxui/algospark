@@ -1,0 +1,14 @@
+{
+  "name": "AlgoSpark 100 — Python-квест",
+  "short_name": "AlgoSpark",
+  "description": "Циклы for в Python: 12 коротких уроков, 36 заданий и сюжетный маршрут для начинающих.",
+  "lang": "ru",
+  "start_url": "/algospark/",
+  "scope": "/algospark/",
+  "display": "standalone",
+  "background_color": "#f3f6fc",
+  "theme_color": "#7567e8",
+  "icons": [
+    { "src": "/algospark/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
