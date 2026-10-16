@@ -279,7 +279,7 @@ main { width: min(100%,980px); margin: 0 auto; overflow: visible; padding: 28px 
   *,*::before,*::after { scroll-behavior: auto!important; animation-duration: .01ms!important; animation-delay: 0ms!important; animation-iteration-count: 1!important; transition-duration: .01ms!important; }
 }
 
-/* FinPlus inspired glass palette: cool canvas, warm actions, quiet violet ambience. */
+/* Application palette and surface colors. */
 :root {
   --bg-body: #f1f3f6;
   --bg-canvas: rgba(255,255,255,.84);

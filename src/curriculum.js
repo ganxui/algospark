@@ -1,4 +1,4 @@
-// Original 12-lesson curriculum restored from the deployed backup.
+// Course content: 12 lessons on Python for loops.
 
 const MASCOTS = {
   "vector": "<svg width=\"58\" height=\"58\" viewBox=\"0 0 48 48\" fill=\"none\" aria-hidden=\"true\"><circle cx=\"24\" cy=\"24\" r=\"18\" fill=\"#059669\"/><circle cx=\"24\" cy=\"24\" r=\"12\" fill=\"#10b981\"/><circle cx=\"24\" cy=\"24\" r=\"6\" fill=\"#ecfdf5\"/><path d=\"M6 24H12M36 24H42M24 6V12M24 36V42\" stroke=\"#34d399\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg>"

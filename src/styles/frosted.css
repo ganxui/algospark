@@ -1,4 +1,4 @@
-/* The same matte-glass material as the FinPlus overview panels. */
+/* Shared panel and dialog styles. */
 :root {
   --as-frost-surface: rgba(255, 255, 255, .61);
   --as-frost-edge: rgba(110, 130, 158, .19);

@@ -45,7 +45,7 @@ const app = {
 
     load() {
       try {
-        // Restore progress from the original curriculum, never from the shortened course.
+        // Migrate saved progress from the legacy storage namespace.
         if (storage.getItem('algospark_cycles_v3_done') === null) {
           for (const suffix of ['xp', 'gems', 'done', 'streak', 'badges', 'progress', 'streak_day']) {
             const value = storage.getItem(`as100_for_v1_${suffix}`);
